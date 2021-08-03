@@ -6,6 +6,7 @@ function showForm() {
 
 function clearForm() {
 	console.log("arrived in clearForm()");
-	var cname = document.getElementById("cname");
-	cname.value = "";
+	document.getElementById("cname").value = "";
+	document.getElementById("pname").value = "";
+	document.getElementById("budget").value = "";
 }
