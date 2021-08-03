@@ -11,5 +11,8 @@ body{
 label{
 	color: red;
 	text-decoration: underline;
-	text-align: left;
+}
+
+.form{
+	display: none;
 }

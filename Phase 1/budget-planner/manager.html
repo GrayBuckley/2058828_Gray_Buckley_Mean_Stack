@@ -3,24 +3,33 @@
 	<head>
 		<title>Program Managers</title>
 		<link rel="stylesheet" href="styles.css">
+		<script src="scripts.js"></script>
 	</head>
 	<body>
-		<div><button type="button">Add New Budget</button></div>
 		<div>
-			<label for="cname">Client Name</label>
-			<input type="text" id="cname" name="cname">
+			<button 
+				type="button" 
+				onclick="showForm()">
+				Add New Budget
+			</button>
 		</div>
-		<div>
-			<label for="pname">Project Name</label>
-			<input type="text" id="pname" name="pname">
-		</div>
-		<div>
-			<label for="budget">Budget</label>
-			<input type="text" id="budget" name="budget">
-		</div>
-		<div>
-			<button type="submit">Add</button>
-			<button type="reset">Clear</button>
+		<div id="form" class=form>
+			<div>
+				<label for="cname">Client Name</label>
+				<input type="text" id="cname" name="cname">
+			</div>
+			<div>
+				<label for="pname">Project Name</label>
+				<input type="text" id="pname" name="pname">
+			</div>
+			<div>
+				<label for="budget">Budget</label>
+				<input type="text" id="budget" name="budget">
+			</div>
+			<div>
+				<button type="submit">Add</button>
+				<button type="reset">Clear</button>
+			</div>
 		</div>
 		<div class=back><a href="index.html">Back</a></div>
 	</body>
