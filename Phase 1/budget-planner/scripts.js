@@ -10,3 +10,13 @@ function clearForm() {
 	document.getElementById("pname").value = "";
 	document.getElementById("budget").value = "";
 }
+
+function hideForm() {
+	var form = document.getElementById("form");
+	form.style.display = "none";
+}
+
+function addBttnOnClick() {
+	hideForm();
+	clearForm();
+}
