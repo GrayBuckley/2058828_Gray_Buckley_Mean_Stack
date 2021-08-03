@@ -2,3 +2,14 @@ body{
 	font-size: 20pt;
 	text-align: center;
 }
+
+.back{
+	font-size: 12pt;
+	text-align: left;
+}
+
+label{
+	color: red;
+	text-decoration: underline;
+	text-align: left;
+}
