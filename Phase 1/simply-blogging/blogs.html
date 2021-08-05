@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Simply Blogging</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+	<script src="scripts.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body onload="onLoad()">
+
+<div class="text-center">
+  <h1>Simply Blogging</h1>
+</div>
+
+<div class="text-center">
+	<label for="titleBox">Title</label>
+	<input type="text" id="titleBox" name="titleBox">
+</div>
+<div class="text-center">
+	<label for="articlesBox">Articles</label>
+	<input type="text" id="articlesBox" name="articlesBox">
+</div>
+<div class="text-center">
+	<label for="imageBox">Image URL</label>
+	<input type="text" id="imageBox" name="imageBox">
+</div>
+<div class="text-center">
+	<button 
+		type="submit"
+		onclick="addBttnClick()">
+		Add Blog
+	</button>
+</div>
+
+<div class="container" id = "blogs">
+</div>
+
+</body>
+</html>
