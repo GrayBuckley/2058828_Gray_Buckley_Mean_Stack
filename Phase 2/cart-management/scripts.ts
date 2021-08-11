@@ -1,7 +1,11 @@
 function AddButtonPress(name: string, price: number){
-    console.log("Hit AddButtonPress:"+name+","+price);
-    // Check if item is already in storage
-    // If not:
+    //console.log("Hit AddButtonPress("+name+","+price+")");
+    if(!InStorage(name)){
         // Add to storage
-        // Update cart quantity 
+        // Update cart quantity
+    }
+}
+
+function InStorage(name: string): boolean{
+    return sessionStorage.getItem(name) !== null;
 }
