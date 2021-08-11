@@ -5,6 +5,7 @@
         <title>Storefront</title>
     </head>
     <link rel="stylesheet" href="styles.css">
+    <script src="scripts.js"></script>
     <body>
         <h1>Shopping Cart</h1>
         <a href="checkout.html">Checkout</a>
@@ -14,13 +15,13 @@
                 <th>Item</th> <th>Price</th> <th>Add</th>
             </tr>
             <tr>
-                <td>Item 1</td> <td>10</td> <td><button>Add</button></td>
+                <td>Item 1</td> <td>10</td> <td><button onclick="AddButtonPress('Item 1', 10)">Add</button></td>
             </tr>
             <tr>
-                <td>Item 2</td> <td>20</td> <td><button>Add</button></td>
+                <td>Item 2</td> <td>20</td> <td><button onclick="AddButtonPress('Item 2', 20)">Add</button></td>
             </tr>
             <tr>
-                <td>Item 3</td> <td>100</td> <td><button>Add</button></td>
+                <td>Item 3</td> <td>100</td> <td><button onclick="AddButtonPress('Item 3', 100)">Add</button></td>
             </tr>
         </table>
     </body>
