@@ -41,22 +41,22 @@ function OnStorefrontLoad(){
 }
 
 function OnCheckoutLoad(){
+    let total = 0;
     for(let i in Object.keys(sessionStorage)){
         let key = sessionStorage.key(parseInt(i,10));
         console.log("key: "+key);
         if(key == quantityKey) continue;
-        AddTableRow(key);
-        // add to total
+        total += AddTableRow(key);
     }
-    // write total
+    document.getElementById("checkoutTotal").innerHTML = total.toString();
 }
 
 function AddTableRow(key: string):number{
     const nameCell = document.createElement("td");
     nameCell.innerHTML = key;
-    const price: number = parseInt(sessionStorage.getItem(key),10);
+    const price: number = parseFloat(sessionStorage.getItem(key));
     const priceCell = document.createElement("td");
-    priceCell.innerHTML = price.toString();
+    priceCell.innerHTML = "$"+price.toString();
     const newRow = document.createElement("tr");
     newRow.appendChild(nameCell);
     newRow.appendChild(priceCell);

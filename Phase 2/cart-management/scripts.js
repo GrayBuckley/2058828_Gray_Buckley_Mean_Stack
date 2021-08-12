@@ -34,22 +34,22 @@ function OnStorefrontLoad() {
     SetCartTotal();
 }
 function OnCheckoutLoad() {
+    var total = 0;
     for (var i in Object.keys(sessionStorage)) {
         var key = sessionStorage.key(parseInt(i, 10));
         console.log("key: " + key);
         if (key == quantityKey)
             continue;
-        AddTableRow(key);
-        // add to total
+        total += AddTableRow(key);
     }
-    // write total
+    document.getElementById("checkoutTotal").innerHTML = total.toString();
 }
 function AddTableRow(key) {
     var nameCell = document.createElement("td");
     nameCell.innerHTML = key;
-    var price = parseInt(sessionStorage.getItem(key), 10);
+    var price = parseFloat(sessionStorage.getItem(key));
     var priceCell = document.createElement("td");
-    priceCell.innerHTML = price.toString();
+    priceCell.innerHTML = "$" + price.toString();
     var newRow = document.createElement("tr");
     newRow.appendChild(nameCell);
     newRow.appendChild(priceCell);
