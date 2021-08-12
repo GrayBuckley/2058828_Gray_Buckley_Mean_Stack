@@ -13,7 +13,7 @@ function AddToStorage(name, price) {
     sessionStorage.setItem(name, price.toString());
 }
 function IncrementQuantity() {
-    var quantity = sessionStorage.getItem(quantityKey);
+    var quantity = GetQuantity();
     console.log("quantity: " + quantity);
     if (quantity == null) {
         sessionStorage.setItem(quantityKey, "1");
@@ -21,6 +21,15 @@ function IncrementQuantity() {
     else {
         sessionStorage.setItem(quantityKey, (parseInt(quantity, 10) + 1).toString());
     }
-    document.getElementById("cartTotal").firstChild.nodeValue = sessionStorage.getItem(quantityKey);
+    SetCartTotal();
 }
-// On load - load cart quantity
+function GetQuantity() {
+    return sessionStorage.getItem(quantityKey);
+}
+function SetCartTotal() {
+    if (GetQuantity() != null)
+        document.getElementById("cartTotal").firstChild.nodeValue = sessionStorage.getItem(quantityKey);
+}
+function OnPageLoad() {
+    SetCartTotal();
+}

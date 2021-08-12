@@ -17,14 +17,25 @@ function AddToStorage(name: string, price: number){
 }
 
 function IncrementQuantity(){
-    let quantity: string = sessionStorage.getItem(quantityKey);
+    let quantity: string = GetQuantity();
     console.log("quantity: "+quantity);
     if(quantity == null){
         sessionStorage.setItem(quantityKey, "1");
     } else {
         sessionStorage.setItem(quantityKey, (parseInt(quantity, 10)+1).toString());
     }
-    document.getElementById("cartTotal").firstChild.nodeValue = sessionStorage.getItem(quantityKey);
+    SetCartTotal();
 }
 
-// On load - load cart quantity
+function GetQuantity(): string {
+    return sessionStorage.getItem(quantityKey);
+}
+
+function SetCartTotal(){
+    if(GetQuantity() != null)
+        document.getElementById("cartTotal").firstChild.nodeValue = sessionStorage.getItem(quantityKey);
+}
+
+function OnPageLoad(){
+    SetCartTotal();
+}
