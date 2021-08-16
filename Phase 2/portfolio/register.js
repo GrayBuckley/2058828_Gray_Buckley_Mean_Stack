@@ -34,7 +34,8 @@ app.controller('registerCtrl', function($scope){
             firstName: firstName,
             lastName: lastName,
             username: username,
-            password: password
+            password: password,
+            contacts: []
         }
     }
     $scope.emptyInputs = function(){
