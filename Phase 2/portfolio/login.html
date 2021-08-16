@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="login.js"></script>
+    <head>
+        <title>Portfolio Login</title>
+    </head>
+    <body>
+        <h1>Login Form</h1>
+        <div ng-app="loginApp" ng-controller="loginCtrl">
+            <div>Username: <input type="text" ng-model="username"></div>
+            <div>Password: <input type="text" ng-model="password"></div>
+            <div>
+                <button ng-click="loginClick()">Login</button>
+            </div>
+        </div>
+        <a href="register.html">Sign Up</a>
+    </body>
+</html>
