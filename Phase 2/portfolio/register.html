@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="register.js"></script>
+    <head>
+        <title>Portfolio Registration</title>
+    </head>
+    <body>
+        <h1>Portfolio Registration</h1>
+        <a href="login.html">Login</a>
+        <div ng-app="registerApp" ng-controller="registerCtrl">
+            <div>First Name: <input type="text" ng-model="firstName"></div>
+            <div>Last Name: <input type="text" ng-model="lastName"></div>
+            <div>Username: <input type="text" ng-model="username"></div>
+            <div>Password: <input type="text" ng-model="password"></div>
+            <div>
+                <button ng-click="registerClick()">Register</button>
+                <button ng-click="resetClick()">Reset</button>
+            </div>
+        </div>
+    </body>
+</html>
