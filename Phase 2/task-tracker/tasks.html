@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <style type=text/css>
+        table, th, td{
+            border: 1px solid black;
+        }
+    </style>
+    <head>
+        <title>Task Tracker</title>
+    </head>
+    <body>
+        <h1>Task Tracker</h1>
+        <div>
+            <h2>New task:</h2>
+            <div>ID: <input type="text" id="idInput"></div>
+            <div>Name: <input type="text" id="nameInput"></div>
+            <div>Task: <input type="text" id="taskInput"></div>
+            <div>Deadline: <input type="text" id="deadlineInput"></div>
+            <div>
+                <button onclick="submitButtonClick()">Submit</button>
+                <button onclick="resetButtonClick()">Reset</button>
+            </div>
+        </div>
+        <div>
+            <h2>To-do List:</h2>
+            <table id="todoTable">
+                <tr>
+                    <th>Emp ID</th>
+                    <th>Name</th>
+                    <th>Task</th>
+                    <th>Deadline</th>
+                </tr>
+            </table>
+        </div>
+        <script>
+            const inputIDs = ["idInput", "nameInput", "taskInput", "deadlineInput"];
+            function resetButtonClick(){
+                inputIDs.forEach(id => {
+                    document.getElementById(id).value = "";
+                });
+            }
+            function submitButtonClick(){
+                let valid = true;
+                let newRow = document.createElement("tr");
+                inputIDs.forEach(id => {
+                    let text = document.getElementById(id).value;
+                    if(text === "" && valid){
+                        alert("submit failed - empty field");
+                        valid = false;
+                    }
+                    newRow.appendChild(newTableCell(text));
+                });
+                if(valid)
+                    document.getElementById("todoTable").appendChild(newRow);
+            }
+            function newTableCell(text){
+                let newCell = document.createElement("td");
+                newCell.innerHTML = text;
+                return newCell;
+            }
+        </script>
+    </body>
+</html>
