@@ -1,0 +1,13 @@
+{
+    "start_url": "/index.html",
+    "name": "Task Tracker",
+    "short_name": "Tasks",
+    "display": "standalone",
+    "icons": [
+        {
+            "src": "icon.png",
+            "sizes": "144x144",
+            "type": "image/png"
+        }
+    ]
+}
