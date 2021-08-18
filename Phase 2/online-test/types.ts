@@ -5,20 +5,21 @@ export type testQuestion = {
 
 export type submission = number[]; // indexes of answers
 
+export type answerKey = {
+    answers: submission;
+    minPass: number; // portion of correct answers needed to pass, between 0 and 1 (ex: 0.7)
+}
+
 export type test = {
     questions: testQuestion[];
-    minPass: number; // portion of correct answers needed to pass, between 0 and 1 (ex: 0.7)
-    answerKey: submission;
+    answerKey: answerKey;
 }
 
-export type correctAnswerReport = number;
-
-export type incorrectAnswerReport = {
+export type answerReport = {
     submitted: number;
-    correct: number;
+    key: number;
+    correct: boolean;
 }
-
-export type answerReport = correctAnswerReport | incorrectAnswerReport;
 
 export type testReport = {
     answers: answerReport[];
