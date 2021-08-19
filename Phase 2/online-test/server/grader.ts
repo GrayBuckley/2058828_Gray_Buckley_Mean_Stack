@@ -9,7 +9,7 @@ function gradeQuestion(submission: number, key: number): types.answerReport{
 }
 
 
-function gradeSubmission(submission: types.submission, key: types.answerKey): types.testReport{
+export function gradeSubmission(submission: types.submission, key: types.answerKey): types.testReport{
     let denom = key.answers.length;
     let num = 0;
     let questionReports:types.answerReport[] = [];

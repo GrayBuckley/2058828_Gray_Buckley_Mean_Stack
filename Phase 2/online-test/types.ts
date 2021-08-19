@@ -26,3 +26,24 @@ export type testReport = {
     totalCorrect: number;
     passed: boolean;
 }
+
+export type gradeRequest = {
+    requestType: "grade";
+    testID: number;
+    submission: submission;
+}
+
+export type testRequest = {
+    requestType: "test";
+    testID: number;
+}
+
+export type request = gradeRequest | testRequest;
+
+export function isGradeRequest(request: request): boolean{
+    return request.requestType === "grade";
+}
+
+export function isTestRequest(request: request): boolean{
+    return request.requestType === "test";
+}
