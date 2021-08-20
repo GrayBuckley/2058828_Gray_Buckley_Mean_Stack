@@ -1,5 +1,5 @@
 all: types.js server
-.PHONY: server
+.PHONY: server client
 types.js: types.ts
 	tsc types.ts
 server:
