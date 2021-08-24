@@ -1,23 +1,29 @@
 declare var require: any;
 const fs = require('fs');
 
-import {record, newRecord} from "./record";
+import {record} from "./record";
 
 const logPath = "./log.json"
 
 
-export function readLog():record[]{
+function readLog():record[]{
     return JSON.parse(fs.readFileSync(logPath));
 }
 
-export function writeLog(log:record[]){
+function writeLog(log:record[]){
     fs.writeFileSync(logPath, JSON.stringify(log));
 }
 
-function logInit(){
+export function logInit(){
     try{
         fs.accessSync(logPath);
     } catch {
         fs.writeFileSync(logPath, JSON.stringify([]));
     }
+}
+
+export function addRecord(r:record){
+    let log = readLog();
+    log.push(r);
+    writeLog(log);
 }
