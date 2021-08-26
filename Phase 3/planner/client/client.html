@@ -6,6 +6,7 @@
             border: 1px solid black;
         }
     </style>
+    <script src="controller.js"></script>
 </head>
 <body>
     <h1>Task Planner</h1>
@@ -15,15 +16,15 @@
         <div>Task ID: <input id="tidInput" type="text"></div>
         <div>Task: <input id="tdescInput" type="text"></div>
         <div>Deadline: <input id="deadlineInput" type="text"></div>
-        <button>Add Task</button>
+        <button onclick="addClick()">Add Task</button>
     </div>
     <div>
         <h2>Delete Task</h2>
-        <div>Task ID: <input id="tidDelete" type="input"> <button>Delete Task</button></div>
+        <div>Task ID: <input id="tidDelete" type="input"> <button onclick="deleteClick()">Delete Task</button></div>
     </div>
     <div>
         <h2>List Task</h2>
-        <button>List all tasks</button>
+        <button onclick="listClick()">List all tasks</button>
         <table id="table">
             <tr><th>EID</th><th>TID</th><th>Task</th><th>Deadline</th></tr>
         </table>
