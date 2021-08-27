@@ -1,14 +1,15 @@
-
+const serverURL = "http:127.0.0.1:8080/";
 
 function addClick(){
     let eid = (document.getElementById("eidInput") as HTMLInputElement).value;
     let tid = (document.getElementById("tidInput") as HTMLInputElement).value;
     let taskDesc = (document.getElementById("tdescInput") as HTMLInputElement).value;
     let due = (document.getElementById("deadlineInput") as HTMLInputElement).value;
-    
+    fetch(serverURL+"add?eid="+eid+"&tid="+tid+"&task="+taskDesc+"&due="+due);
 }
 function deleteClick(){
     let tid = (document.getElementById("tidDelete") as HTMLInputElement).value;
+    fetch(serverURL+"delete?tid="+tid);
 }
 function listClick(){
     clearTable(document.getElementById("table") as HTMLTableElement);
