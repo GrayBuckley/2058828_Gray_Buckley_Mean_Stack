@@ -6,16 +6,21 @@ function addClick(){
     let taskDesc = (document.getElementById("tdescInput") as HTMLInputElement).value;
     let due = (document.getElementById("deadlineInput") as HTMLInputElement).value;
     fetch(serverURL+"add?eid="+eid+"&tid="+tid+"&task="+taskDesc+"&due="+due);
+    listClick();
 }
 function deleteClick(){
     let tid = (document.getElementById("tidDelete") as HTMLInputElement).value;
     fetch(serverURL+"delete?tid="+tid);
+    listClick();
 }
 function listClick(){
     clearTable(document.getElementById("table") as HTMLTableElement);
+    fetch(serverURL+"get").then(res => getRecieved(res));
 }
-function getRecieved(res:string){
-    var a = JSON.parse(res) as any[];
+function getRecieved(res:Response){
+    res.blob().then(blob => {
+    blob.text().then(txt => {
+    var a = JSON.parse(txt) as any[];
     a.forEach(t => {
         var row = document.createElement("tr");
         var eidD = document.createElement("td");
@@ -31,7 +36,7 @@ function getRecieved(res:string){
         row.appendChild(descD);
         row.appendChild(dueD);
         document.getElementById("table").appendChild(row);
-    });
+    })})});
 }
 
 function clearTable(table:HTMLTableElement){
