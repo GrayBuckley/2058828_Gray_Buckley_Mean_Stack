@@ -7,3 +7,5 @@ server/httpController.js: server/httpController.ts
 	tsc server/httpController.ts
 client/controller.js: client/controller.ts
 	tsc client/controller.ts
+run: all
+	node server/httpController.js
