@@ -1,10 +1,20 @@
 <!DOCTYPE html>
 <html>
     <head>
-
+        <script>
+            function login(){
+                const name = document.getElementById("nameInput").value;
+                sessionStorage.setItem("name", name);
+                window.location.replace("chat.html");
+            }
+        </script>
     </head>
     <body>
         <h1>Socket Chatting Login</h1>
-        <div>Name: <input type="text" id="nameInput"> <button>Login</button></div>
+        <div>
+            Name: 
+            <input type="text" id="nameInput"> 
+            <button onclick="login()">Login</button>
+        </div>
     </body>
 </html>
