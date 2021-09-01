@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <script src="node_modules/socket.io-client/dist/socket.io.js"></script>
         <script src="scripts.js"></script>
     </head>
     <body onload="onPageLoad()">
@@ -9,7 +10,7 @@
         <h2>Send Message</h2>
         <div>Name: <input type="text" id="recipientName"></div>
         <div>Message: <input type="text" id="messageTxt"></div>
-        <button>Send</button>
+        <button onclick="onSendClick()">Send</button>
         <div id=recievedDiv hidden>
             <h2>Most Recent Message Recieved:</h2>
             <p id=recievedP></p>
