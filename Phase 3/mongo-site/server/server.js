@@ -7,7 +7,7 @@ const collection = "courses";
 
 function createCourse(id,name,description,amount){
     let data = {
-        id:id,
+        _id:id,
         name:name,
         description:description,
         amount:amount
