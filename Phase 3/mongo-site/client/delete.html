@@ -1,3 +1,10 @@
+<script>
+    var serverURL = "http:127.0.0.1:8080/";
+    function deleteClick(){
+        let id = document.getElementById("id").value;
+        fetch(serverURL+"delete?id="+id);
+    }
+</script>
 <h1>Delete Course</h1>
 <div>Course Id: <input type="text" id="id"></div>
-<button>Delete</button>
+<button onclick="deleteClick()">Delete</button>

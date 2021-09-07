@@ -1,4 +1,12 @@
+<script>
+    var serverURL = "http:127.0.0.1:8080/";
+    function updateClick(){
+        let id = document.getElementById("id").value;
+        let amount = document.getElementById("amount").value;
+        fetch(serverURL+"change?id="+id+"&amount="+amount);
+    }
+</script>
 <h1>Update Course</h1>
 <div>Course Id: <input type="text" id="id"></div>
 <div>Amount: <input type="text" id="amount"></div>
-<button>Update</button>
+<button onclick="updateClick()">Update</button>

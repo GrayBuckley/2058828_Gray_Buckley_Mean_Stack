@@ -23,7 +23,7 @@ function createCourse(id,name,description,amount){
 }
 
 function changeCourse(id,amount){
-    let filter = {id:id};
+    let filter = {_id:id};
     let update = {$set: {amount:amount}};
     client.connect(err => {
         const dbo = client.db("test");
@@ -36,7 +36,7 @@ function changeCourse(id,amount){
 }
 
 function deleteCourse(id){
-    let filter = {id:id};
+    let filter = {_id:id};
     client.connect(err => {
         const dbo = client.db("test");
         dbo.createCollection(collection, (err,res) => {
