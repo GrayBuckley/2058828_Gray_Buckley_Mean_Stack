@@ -1,6 +1,16 @@
+<script>
+    var serverURL = "http:127.0.0.1:8080/";
+    function addClick(){
+        let id = document.getElementById("id").value;
+        let name = document.getElementById("name").value;
+        let desc = document.getElementById("desc").value;
+        let amount = document.getElementById("amount").value;
+        fetch(serverURL+"create?id="+id+"&name="+name+"&description="+desc+"&amount="+amount);
+    }
+</script>
 <h1>Add Course</h1>
 <div>Course Id: <input type="text" id="id"></div>
 <div>Course Name: <input type="text" id="name"></div>
 <div>Description: <input type="text" id="desc"></div>
 <div>Amount: <input type="text" id="amount"></div>
-<button>Add</button>
+<button onclick="addClick()">Add</button>
