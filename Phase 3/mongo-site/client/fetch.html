@@ -9,3 +9,27 @@
 <table id="table">
     <tr><th>id</th><th>name</th><th>description</th><th>amount</th></tr>
 </table>
+<script>
+    fetch("http:127.0.0.1:8080/fetch").then(res => {
+        res.blob().then(blob => {
+            blob.text().then(txt => {
+                JSON.parse(txt).forEach(element => {
+                    var row = document.createElement("tr");
+                    var idD = document.createElement("td");
+                    var nameD = document.createElement("td");
+                    var descD = document.createElement("td");
+                    var amountD = document.createElement("td");
+                    idD.innerText = element._id;
+                    nameD.innerText = element.name;
+                    descD.innerText = element.description;
+                    amountD.innerText = element.amount;
+                    row.appendChild(idD);
+                    row.appendChild(nameD);
+                    row.appendChild(descD);
+                    row.appendChild(amountD);
+                    document.getElementById("table").appendChild(row);
+                });
+            });
+        });
+    })
+</script>
